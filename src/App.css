@@ -1,32 +1,215 @@
+.body{
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
+}
+
 .App {
+  margin: auto;
   text-align: center;
+  width: 320px;
+  height: 480px;
+  background-image: url("Skyshot.jpg") ;
+  background-size: cover;
+  font-size: 10px;
+  color: black;
+  border: 2px black solid;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Nav{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-content: center;
+  border-radius: 30%; 
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+}
+
+.wpis{
+  background-color: rgb(4, 22, 61);
+  color: white;
+  border-bottom: 0;
+  border-top: 0;
+  padding: 4px;
+  margin-bottom: 1px;
+}
+
+.przycisk{
+  margin-top: 3px;
+  border: 1px white linen;
+  background-color: rgb(4, 22, 61);
+  margin-left:10px; 
+  cursor: pointer;
+  font-size: 16px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-bar{
+  width: 280px;
+  overflow: hidden;
+  transform: translateY(-100%);
+  background-color: rgb(4, 22, 61);
+  transition: 0.5s transform ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.lupa{
+background-color: rgb(4, 22, 61);
+color: white;
+border: 0;
+width: 40px;
+opacity: 0.8;
+position: relative;
+}
+
+.lupa:hover{
+  cursor: pointer;
+}
+
+.lupa:focus ~ .nav-bar, .nav-bar:hover{
+  transform: translateY(0);
+}
+
+.result{
+  padding-top:40px; 
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 220px;
+  color: white;
+  font-size: 20px;
+  position: initial;
+}
+
+.day{
+  border-top: 2px white solid;
+  width: 300px;
+  height: 218px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+  padding-right: 10px; 
+  background-color: rgba(12, 122, 185, 0.87);
+  opacity: 0.9999;
+  color:white;
+  font-size: 15px;
+}
+
+.day img{
+width: 90px;
+height: 90px;
+padding: 0;
+margin: 0;
+}
+
+.day1{
+  padding-right: 5px;
+margin: 2px;
+border-right: 2px white solid;
+}
+
+.day2{
+  padding: 0;
+margin: 2px;
+}
+
+.day3{
+
+  padding-left: 5px;
+margin: 2px;
+border-left: 2px white solid;
+}
+@keyframes animacja {
+  0% {
+    transform: translateX(0) translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  30%{
+    transform: translateX(40px) translateY(-40px) scale(3);
   }
+  70%{
+    transform: translateX(40px) translateY(-40px) scale(3);
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+}
+
+.icone.lupa {
+  margin-top: 0;
+  width: 14px;
+  height: 14px;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.icone.lupa:after {
+  position: absolute;
+  width: 70%;
+  height: 3px;
+  background-color: white;
+  display: block;
+  content: "";
+  top: 20%;
+  left: 20%;
+  
+  transform: rotate(45deg);
+  transform-origin: -5px 20px;
+  
+}
+
+.anim{
+position: absolute;
+top: 0;
+transform: translateX(270px);
+animation-name: animacja;
+animation-direction: 3s;
+}
+
+.miasto{
+font-size: 35px;
+}
+
+.W{
+  padding-top: 20px; 
+  padding-bottom: 20px;
+  font-size: 40px;
+}
+
+.rozwi{
+z-index: 1;
+position: absolute;
+background-color: rgba(0, 63, 99, 0.87);
+padding: 20px;
+margin-top: 10px;
+transform: translateX(28px) translateY(-370px) ;
+border-radius: 10%;
+line-height: 2;
+opacity: 0;
+transition: 0.8s ease-in-out;
+}
+
+.wiecej{
+  color: black;
+  border: 0;
+  background-color: white;
+  border-radius: 40%;
+  font-size: 15px;
+  font-style: italic;
+  margin-top: 25px;
+  padding: 1px 7px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.wiecej:focus ~ .rozwi{
+  opacity: 1;
+  transform: translateY(0px) translateX(28px);
+}
+
+.obr{
+  background-color: rgba(6, 54, 117, 0.87);
+  border-radius: 40%;
 }
