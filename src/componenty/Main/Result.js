@@ -2,13 +2,11 @@ import React from 'react';
 
 const Result = props => {
 
-    const {date, city, temp, press, wind, err, icon, humidity } = props.weather;
+    const {date, city, temp, press, wind, err, icon, humidity, temp_max, temp_min } = props.weather;
 
     const icona = `http://openweathermap.org/img/w/${icon}.png`;
 
     let tempe = Math.round(temp);
-
-    const days = ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"];
     
 
     let content = null;
@@ -25,9 +23,11 @@ const Result = props => {
              <div> {date}</div> 
              <button className="wiecej">\/</button>
              <div className="rozwi">
-             <div>Ciśnienie: {press} hPa </div>
-            <div>Szybkość wiatru: {wind} m/s </div>
-            <div>Wilgotność {humidity} % </div> 
+             <p>{temp_min} &#176;C &nbsp;&nbsp;&nbsp; {temp_max} &#176;C</p>
+             <p className="linia"> &nbsp;MIN<i class="demo-icon icon-thermometer-0"></i>  MAX<i class="demo-icon icon-thermometer-3"></i></p>
+             <div><i class="demo-icon icon-gauge"></i> Ciśnienie: {press} hPa </div>
+            <div><i class="demo-icon icon-air"></i> Szybkość Wiatru: {wind} m/s </div>
+            <div><i class="demo-icon icon-tint"></i> Wilgotność {humidity} % </div> 
             </div>
             </div>
         )

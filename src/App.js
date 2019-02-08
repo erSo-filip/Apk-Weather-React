@@ -5,6 +5,8 @@ import Result from './componenty/Main/Result';
 import Day1 from './componenty/Extra/Day1';
 import Day2 from './componenty/Extra/Day2';
 import Day3 from './componenty/Extra/Day3';
+import'./css/fontello.css';
+
 class App extends Component {
 
   state = {
@@ -53,7 +55,7 @@ class App extends Component {
    })
    .then(response => response.json())
     .then(data => {
-    // console.log(data)
+    console.log(data)
     const days = ["Niedz", "Pon", "Wt", "Śr", "Czw", "Pt", "Sob"];
     const time = new Date()
     let text = '';
@@ -69,6 +71,8 @@ class App extends Component {
       date: formattime(time),
       city: this.state.value,
       temp: data.main.temp,
+      temp_max: data.main.temp_max,
+      temp_min: data.main.temp_min,
       press: data.main.pressure,
       wind: data.wind.speed,
       humidity: data.main.humidity,
@@ -172,6 +176,8 @@ class App extends Component {
       date: formattime(time),
       city: this.state.value,
       temp: data.main.temp,
+      temp_max: data.main.temp_max,
+      temp_min: data.main.temp_min,
       press: data.main.pressure,
       wind: data.wind.speed,
       humidity: data.main.humidity,

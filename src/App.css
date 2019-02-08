@@ -5,6 +5,19 @@
   font-size: 30px;
 }
 
+p{
+  line-height: 1px;
+  text-align: center;
+  font-size: 25px;
+  color: aliceblue;
+  margin-bottom: 10px;
+}
+
+.linia{
+  border-bottom: 1px white solid;
+  padding-bottom: 17px; 
+}
+
 .App {
   margin: auto;
   text-align: center;
@@ -40,12 +53,20 @@
 
 .przycisk{
   margin-top: 3px;
-  border: 1px white linen;
+  border: 0;
   background-color: rgb(4, 22, 61);
   margin-left:10px; 
   cursor: pointer;
   font-size: 16px;
   color: white;
+  padding: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.przycisk:hover{
+  background-color: rgb(30, 47, 82);
+  
 }
 
 .nav-bar{
@@ -169,13 +190,16 @@ animation-direction: 3s;
 }
 
 .miasto{
-font-size: 35px;
+font-size: 40px;
+}
+.miasto::first-letter{
+  text-transform: uppercase;
 }
 
 .W{
-  padding-top: 20px; 
-  padding-bottom: 20px;
-  font-size: 40px;
+  padding-top: 10px; 
+  padding-bottom: 15px;
+  font-size: 50px;
 }
 
 .rozwi{
@@ -183,12 +207,14 @@ z-index: 1;
 position: absolute;
 background-color: rgba(0, 63, 99, 0.87);
 padding: 20px;
+padding-top: 5px;
 margin-top: 10px;
-transform: translateX(28px) translateY(-370px) ;
+transform: translateX(20px) translateY(-370px) ;
 border-radius: 10%;
-line-height: 2;
+line-height: 1.5;
 opacity: 0;
 transition: 0.8s ease-in-out;
+text-align: left;
 }
 
 .wiecej{
@@ -198,15 +224,16 @@ transition: 0.8s ease-in-out;
   border-radius: 40%;
   font-size: 15px;
   font-style: italic;
-  margin-top: 25px;
+  margin-top: 20px;
   padding: 1px 7px;
   font-weight: 700;
   cursor: pointer;
+
 }
 
 .wiecej:focus ~ .rozwi{
   opacity: 1;
-  transform: translateY(0px) translateX(28px);
+  transform: translateY(0px) translateX(20px);
 }
 
 .obr{
