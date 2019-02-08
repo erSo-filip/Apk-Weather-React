@@ -47,6 +47,12 @@
       "css": "air",
       "code": 59393,
       "src": "entypo"
+    },
+    {
+      "uid": "0cd2582b8c93719d066ee0affd02ac78",
+      "css": "sort-alt-up",
+      "code": 61792,
+      "src": "fontawesome"
     }
   ]
 }

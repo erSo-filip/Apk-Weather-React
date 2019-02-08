@@ -7,7 +7,8 @@ const Result = props => {
     const icona = `http://openweathermap.org/img/w/${icon}.png`;
 
     let tempe = Math.round(temp);
-    
+    let tempe_min = Math.round(temp_min);
+    let tempe_max = Math.round(temp_max);
 
     let content = null;
 
@@ -21,10 +22,10 @@ const Result = props => {
             <div className="W">{tempe} &#176;C</div>
             <div className="miasto">{city}</div>
              <div> {date}</div> 
-             <button className="wiecej">\/</button>
+             <button className="wiecej"><i class="demo-icon icon-sort-alt-up"></i></button>
              <div className="rozwi">
-             <p>{temp_min} &#176;C &nbsp;&nbsp;&nbsp; {temp_max} &#176;C</p>
-             <p className="linia"> &nbsp;MIN<i class="demo-icon icon-thermometer-0"></i>  MAX<i class="demo-icon icon-thermometer-3"></i></p>
+             <p>{tempe_min} &#176;C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {tempe_max} &#176;C</p>
+             <p className="linia"> &nbsp;&nbsp;MIN<i class="demo-icon icon-thermometer-0"></i>&nbsp;&nbsp;  MAX<i class="demo-icon icon-thermometer-3"></i></p>
              <div><i class="demo-icon icon-gauge"></i> Ciśnienie: {press} hPa </div>
             <div><i class="demo-icon icon-air"></i> Szybkość Wiatru: {wind} m/s </div>
             <div><i class="demo-icon icon-tint"></i> Wilgotność {humidity} % </div> 

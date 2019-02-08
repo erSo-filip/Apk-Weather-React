@@ -110,8 +110,8 @@ position: relative;
   height: 218px;
   display: flex;
   flex-direction: row;
-  padding-left: 10px;
-  padding-right: 10px; 
+  padding-left: 9px;
+  padding-right: 11px; 
   background-color: rgba(12, 122, 185, 0.87);
   opacity: 0.9999;
   color:white;
@@ -126,19 +126,21 @@ margin: 0;
 }
 
 .day1{
-  padding-right: 5px;
+padding-right: 6px;
 margin: 2px;
 border-right: 2px white solid;
 }
 
 .day2{
-  padding: 0;
+padding: 0;
 margin: 2px;
+padding-left: 2px;
+padding-right: 2px; 
 }
 
 .day3{
 
-  padding-left: 5px;
+padding-left: 6px;
 margin: 2px;
 border-left: 2px white solid;
 }
@@ -209,31 +211,30 @@ background-color: rgba(0, 63, 99, 0.87);
 padding: 20px;
 padding-top: 5px;
 margin-top: 10px;
-transform: translateX(20px) translateY(-370px) ;
+transform: translateX(8px) translateY(-370px) ;
 border-radius: 10%;
 line-height: 1.5;
 opacity: 0;
 transition: 0.8s ease-in-out;
 text-align: left;
+width: 264px;
 }
 
 .wiecej{
   color: black;
   border: 0;
-  background-color: white;
+  background-color: transparent;
   border-radius: 40%;
   font-size: 15px;
-  font-style: italic;
   margin-top: 20px;
   padding: 1px 7px;
-  font-weight: 700;
   cursor: pointer;
 
 }
 
 .wiecej:focus ~ .rozwi{
   opacity: 1;
-  transform: translateY(0px) translateX(20px);
+  transform: translateY(0px) translateX(8px);
 }
 
 .obr{
