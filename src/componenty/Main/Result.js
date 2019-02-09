@@ -28,7 +28,7 @@ const Result = props => {
              <p className="linia"> &nbsp;&nbsp;MIN<i class="demo-icon icon-thermometer-0"></i>&nbsp;&nbsp;  MAX<i class="demo-icon icon-thermometer-3"></i></p>
              <div><i class="demo-icon icon-gauge"></i> Ciśnienie: {press} hPa </div>
             <div><i class="demo-icon icon-air"></i> Szybkość Wiatru: {wind} m/s </div>
-            <div><i class="demo-icon icon-tint"></i> Wilgotność {humidity} % </div> 
+            <div><i class="demo-icon icon-tint"></i> Wilgotność: {humidity} % </div> 
             </div>
             </div>
         )
