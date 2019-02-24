@@ -1,52 +1,32 @@
 import React from 'react';
+import Wykres from './Wykres';
+import More from './More';
+
+const days = ["Niedz", "Pon", "Wt", "Śr", "Czw", "Pt", "Sob"];
+
+const time = new Date(); 
 
 const Result = props => {
+   const weather = props.weather
+	const content = props.weather.list
+		? props.weather.list
+				.slice(0, 1)
+				.map(w => (
+					<div className="result">
+            <div className='anim'><img src={`http://openweathermap.org/img/w/${w.weather[0].icon}.png`} alt=""/></div>
+                <h1 className="W">{ Math.round(w.main.temp)}&#176;C</h1><button className='click'></button> 
+                  <Wykres wykres={weather} legendPosition="bottom"/>
+                 <p className="temp">{ Math.round(w.main.temp*1.8+32)}&#176;F </p>
+                <p className="tempe">{ Math.round(w.main.temp+273)} K</p>
+                <h2 className="miasto">{props.c}</h2>
+                 <h5> {days[time.getDay()]}, {time.getHours()}:{time.getMinutes()<10 ? "0"+time.getMinutes() : time.getMinutes()}</h5> 
+             <button className="wiecej"><i className="demo-icon icon-sort-alt-up"></i></button>
+             <More more={weather} />
+         </div>
+				))
+		: "";
 
-    const {date, city, temp, press, wind, err, icon, humidity, temp_max, temp_min } = props.weather;
+	return content;
+};
 
-    const icona = `http://openweathermap.org/img/w/${icon}.png`;
-
-    let tempe = Math.round(temp);
-    let tempe_min = Math.round(temp_min);
-    let tempe_max = Math.round(temp_max);
-
-    let content = null;
-
-    if(!err && city) {
-
-
-
-        content = (
-            <div>  
-            <div className='anim'><img src={icona} alt=""/></div>
-            <div className="W">{tempe} &#176;C</div>
-            <div className="miasto">{city}</div>
-             <div> {date}</div> 
-             <button className="wiecej"><i class="demo-icon icon-sort-alt-up"></i></button>
-             <div className="rozwi">
-             <p>{tempe_min} &#176;C &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {tempe_max} &#176;C</p>
-             <p className="linia"> &nbsp;&nbsp;MIN<i class="demo-icon icon-thermometer-0"></i>&nbsp;&nbsp;  MAX<i class="demo-icon icon-thermometer-3"></i></p>
-             <div><i class="demo-icon icon-gauge"></i> Ciśnienie: {press} hPa </div>
-            <div><i class="demo-icon icon-air"></i> Szybkość Wiatru: {wind} m/s </div>
-            <div><i class="demo-icon icon-tint"></i> Wilgotność: {humidity} % </div> 
-            </div>
-            </div>
-        )
-    }
-
-    return(
-        <div className="result">
-        {err ? `${city} nie ma takiego miasta` : content} 
-         {/* <React.Fragment>
-            <div>Pogoda dla: {city}</div>
-            <div><img src={icona} alt=""/></div>
-            <div> {date}</div>
-            <div>temp {tempe}</div>
-            <div>cis {press}</div>
-            <div>wiatr {wind}</div>
-            <div>wilg {humidity}</div>
-        </React.Fragment>  */}
-        </div>
-    );
-}
 export default Result;
